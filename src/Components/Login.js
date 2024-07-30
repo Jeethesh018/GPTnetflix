@@ -16,13 +16,14 @@ const Login = () => {
 
   function handleButton(e) {
     e.preventDefault();
-    setError(
-      checkValidation(
-        email.current.value,
-        password.current.value,
-        name.current.value
-      )
+    let message = checkValidation(
+      email.current.value,
+      password.current.value,
+      name.current.value
     );
+    setError(message);
+
+    if (message) return;
   }
   return (
     <div className="">
