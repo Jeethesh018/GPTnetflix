@@ -2,11 +2,14 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import checkValidation from "../utils/Validate";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addName } from "../utils/userDetails";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
   const [error, setError] = useState(null);
   let navigate = useNavigate();
+  let dispatch = useDispatch();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -24,6 +27,7 @@ const Login = () => {
       name.current.value
     );
     setError(message);
+    dispatch(addName(name.current.value));
 
     if (message) return;
 

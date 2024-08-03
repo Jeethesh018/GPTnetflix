@@ -9,3 +9,5 @@ export const MovieList = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YzAxNTJmNTc2MDI1MDA0YzBiOTA5MTI1ODhjNzE2NCIsIm5iZiI6MTcyMjUyMDkxNi4xNTE2NTYsInN1YiI6IjY2M2UyYjNmOTE0ZDU3Mzk3OGE0OTc3NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CxCZtvr3xf1orKtBj6tMFQDcuzg3MnuDhuTbbrWgwu0",
   },
 };
+
+export const IMG_URL = "https://image.tmdb.org/t/p/original";

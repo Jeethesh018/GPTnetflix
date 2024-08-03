@@ -7,8 +7,9 @@ import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
   const [movielist] = useMovieList();
-  const MoviesStore = useSelector((store) => store.Movies);
-  console.log(MoviesStore);
+  const MoviesStore = useSelector((store) => store?.Movies);
+  const user = useSelector((store) => store?.user);
+
   return (
     <>
       <div>
