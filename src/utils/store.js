@@ -5,7 +5,7 @@ import MovieSlice from "./MovieSlice";
 const store = configureStore({
   reducer: {
     user: userDetails,
-    Movies: MovieSlice,
+    movies: MovieSlice,
   },
 });
 
