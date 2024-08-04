@@ -2,8 +2,6 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
-
   return (
     <div className="p-6  cursor-pointer">
       <div className="text-3xl py-4 text-white ">{title}</div>

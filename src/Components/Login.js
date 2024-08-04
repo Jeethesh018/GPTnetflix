@@ -4,6 +4,7 @@ import checkValidation from "../utils/Validate";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addName } from "../utils/userDetails";
+import { BG_IMG } from "../utils/Constants";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
@@ -36,11 +37,7 @@ const Login = () => {
   return (
     <div className="">
       <Header />
-      <img
-        className="absolute"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/21a8ba09-4a61-44f8-8e2e-70e949c00c6f/dd6fb0ba-0785-4a31-80ae-32a8ae365afe/IN-hi-20240722-POP_SIGNUP_TWO_WEEKS-perspective_WEB_02114e9f-02df-4094-b9db-d849392fa957_medium.jpg"
-        alt="ng_img"
-      />
+      <img className="absolute" src={BG_IMG} alt="ng_img" />
       <form className=" p-12 w-3/12 bg-black absolute my-36 mx-auto right-0 left-0 text-white bg-opacity-85">
         <h3 className="py-4 Font-bold text-3xl">
           {signup ? "Sign In" : "Sign Up"}

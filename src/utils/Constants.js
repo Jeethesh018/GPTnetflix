@@ -11,3 +11,6 @@ export const MovieList = {
 };
 
 export const IMG_URL = "https://image.tmdb.org/t/p/original";
+
+export const BG_IMG =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/21a8ba09-4a61-44f8-8e2e-70e949c00c6f/dd6fb0ba-0785-4a31-80ae-32a8ae365afe/IN-hi-20240722-POP_SIGNUP_TWO_WEEKS-perspective_WEB_02114e9f-02df-4094-b9db-d849392fa957_medium.jpg";
