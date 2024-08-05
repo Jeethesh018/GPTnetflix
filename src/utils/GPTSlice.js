@@ -5,6 +5,7 @@ const GPTSlice = createSlice({
   initialState: {
     toggleSearchView: false,
     languageChange: "English",
+    searchedMoviesList: [],
   },
   reducers: {
     ToggleGPTSearchView: (state) => {
@@ -13,7 +14,11 @@ const GPTSlice = createSlice({
     addlanguageChange: (state, action) => {
       state.languageChange = action.payload;
     },
+    addSearchedMovies: (state, action) => {
+      state.searchedMoviesList = action.payload;
+    },
   },
 });
-export const { ToggleGPTSearchView, addlanguageChange } = GPTSlice.actions;
+export const { ToggleGPTSearchView, addlanguageChange, addSearchedMovies } =
+  GPTSlice.actions;
 export default GPTSlice.reducer;

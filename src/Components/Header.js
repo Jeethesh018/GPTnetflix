@@ -41,14 +41,14 @@ const Header = () => {
 
         <button
           onClick={handleGPT}
-          className="py-2 px-4 m-2 bg-purple-800 text-white rounded-3xl h-14"
+          className="py-2 px-4 m-2 bg-purple-800 text-white text-xl h-10"
         >
-          GPT search
+          {showGPT ? "Homepage" : "GPT Search"}
         </button>
         {location.pathname != "/" ? (
           <button
             onClick={() => navigate("/")}
-            className="text-white text-sm bg-red-500 w-20 h-14 p-2 m-2  rounded-3xl"
+            className="text-white text-sm bg-red-500 w-20 h-10 p-2 m-2"
           >
             Sign Out
           </button>
