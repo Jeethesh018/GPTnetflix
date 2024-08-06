@@ -1,16 +1,17 @@
 import React, { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Language from "../utils/Language";
 import useSearchMovie from "../utils/API/useSearchMovie";
+import { addSearchedMovies } from "../utils/GPTSlice";
 
 const GPTSearchBar = () => {
-  const [searchMovie, setSearchMovie] = useState("dark");
+  const [searchMovie, setSearchMovie] = useState("");
   let langChange = useSelector((store) => store?.GPT?.languageChange);
   const [search] = useSearchMovie(searchMovie);
-  let searchedMovies = useSelector((store) => store?.GPT?.searchedMoviesList);
+  let dispatch = useDispatch();
 
-  async function handleGPTSearch() {
-    console.log(search);
+  function handleGPTSearch() {
+    dispatch(addSearchedMovies(search));
   }
   return (
     <div

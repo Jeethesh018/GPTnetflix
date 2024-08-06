@@ -21,41 +21,45 @@ const Header = () => {
   return (
     <div className="absolute px-8 py-2 bg-gradient-to-b justify-between w-full from-black flex z-10">
       <img className="w-52 " src={LOGO} alt="netflix_logo" />
-      <div className=" flex">
-        {showGPT ? (
-          <select
-            className="bg-black text-white h-10 mt-4 mr-2 text-xl"
-            onChange={(e) => dispatch(addlanguageChange(e.target.value))}
-          >
-            {LangList.map((values) => (
-              <>
-                <option className="text-xl" value={values}>
-                  {values}
-                </option>
-              </>
-            ))}
-          </select>
-        ) : (
-          ""
-        )}
+      {location.pathname != "/" ? (
+        <div className=" flex">
+          {showGPT ? (
+            <select
+              className="bg-black text-white h-10 mt-4 mr-2 text-xl"
+              onChange={(e) => dispatch(addlanguageChange(e.target.value))}
+            >
+              {LangList.map((values) => (
+                <>
+                  <option className="text-xl" value={values}>
+                    {values}
+                  </option>
+                </>
+              ))}
+            </select>
+          ) : (
+            ""
+          )}
 
-        <button
-          onClick={handleGPT}
-          className="py-2 px-4 m-2 bg-purple-800 text-white text-xl h-10"
-        >
-          {showGPT ? "Homepage" : "GPT Search"}
-        </button>
-        {location.pathname != "/" ? (
           <button
-            onClick={() => navigate("/")}
-            className="text-white text-sm bg-red-500 w-20 h-10 p-2 m-2"
+            onClick={handleGPT}
+            className="py-2 px-4 m-2 bg-purple-800 text-white text-xl h-10"
           >
-            Sign Out
+            {showGPT ? "Homepage" : "GPT Search"}
           </button>
-        ) : (
-          ""
-        )}
-      </div>
+          {location.pathname != "/" ? (
+            <button
+              onClick={() => navigate("/")}
+              className="text-white text-sm bg-red-500 w-20 h-10 p-2 m-2"
+            >
+              Sign Out
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
