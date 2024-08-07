@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MovieList } from "../Constants";
-import { useDispatch } from "react-redux";
-import { addSearchedMovies } from "../GPTSlice";
+
 import { useSelector } from "react-redux";
 
 const useSearchMovie = (movie) => {
   const [search, setSearch] = useState("");
-  let dispatch = useDispatch();
   let searchedMovies = useSelector((store) => store?.GPT?.searchedMoviesList);
   useEffect(() => {
     async function fetchingData() {
@@ -18,7 +16,6 @@ const useSearchMovie = (movie) => {
 
       setSearch(response?.data?.results);
     }
-
     fetchingData();
   }, [search]);
   return [search];

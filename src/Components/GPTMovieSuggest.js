@@ -6,7 +6,13 @@ const GPTMovieSuggest = () => {
   let searchedMovies = useSelector((store) => store?.GPT?.searchedMoviesList);
 
   return (
-    <div className=" bg-black text-white p-4 m-4 bg-opacity-90">
+    <div
+      className={`${
+        searchedMovies?.length
+          ? "bg-black text-white p-4 m-4 bg-opacity-40 "
+          : ""
+      }`}
+    >
       <MovieList movies={searchedMovies} />;
     </div>
   );
